@@ -2,12 +2,16 @@
 void quiz()
 {
 	int choise, YesCount = 0, NoCount = 0, OtherCount = 0;
+	
 
-	const int size = 10;
+	const int size = 5;
+	string otherAnswer[size] = {};
 	string questions[size] = {
 		"Do you like programming?",
-		"D"
-
+		"Do you like your programming teacher?",
+		"Does this teacher claim the status of the best teacher?",
+		"Do you plan to continue your studies?",
+		"Did you like it?"
 	};
 
 	string options = "1. Yes\n"
@@ -16,8 +20,16 @@ void quiz()
 	for (int i = 0; i < size; i++)
 	{
 		cout << "Question " << i + 1 << endl << endl;
+		cout << questions[i] << endl;
+		
 		cout << options;
 		cin >> choise;
+
+		if (choise == 3)
+		{
+			cout << "Enter ur answer: ";
+			cin >> otherAnswer[i];
+		}
 		
 	}
 
@@ -31,6 +43,7 @@ void quiz()
 		break;
 	case 3:
 		OtherCount++;
+		
 		break;
 	default:
 		cout << "Incorrect choise! Try again" << endl;
